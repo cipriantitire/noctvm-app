@@ -95,12 +95,12 @@ export default function MobileTopSection({ onVenueClick }: MobileTopSectionProps
       {/* Trending Venues - horizontal scroll */}
       <div className="animate-fade-in-up stagger-4">
         <h3 className="text-[10px] uppercase tracking-widest text-noctvm-silver font-mono font-medium mb-2 px-1">Trending Venues</h3>
-        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {trendingVenues.map(({ name, count }, i) => (
             <button
               key={name}
               onClick={() => onVenueClick(name)}
-              className={`flex flex-col items-center gap-1.5 flex-shrink-0 w-[72px] group animate-fade-in-up stagger-${i + 1}`}
+              className={`flex flex-col items-center gap-1.5 flex-shrink-0 w-[76px] group animate-fade-in-up stagger-${i + 1}`}
             >
               <div className="relative">
                 <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${getVenueColor(name)} flex items-center justify-center ring-2 ring-noctvm-border group-hover:ring-noctvm-violet/50 transition-all duration-300 group-hover:scale-105`}>
@@ -110,7 +110,7 @@ export default function MobileTopSection({ onVenueClick }: MobileTopSectionProps
                   <span className="absolute -top-0.5 -right-0.5 w-5 h-5 rounded-full bg-noctvm-violet text-[10px] font-bold text-white flex items-center justify-center">{count}</span>
                 )}
               </div>
-              <span className="text-[11px] text-noctvm-silver group-hover:text-white transition-colors text-center leading-tight line-clamp-2">{name}</span>
+              <span className="text-[12px] text-noctvm-silver group-hover:text-white transition-colors text-center leading-tight line-clamp-2">{name}</span>
             </button>
           ))}
         </div>
