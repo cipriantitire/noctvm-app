@@ -11,16 +11,16 @@ interface VenuePageProps {
   onClose?: () => void;
 }
 
-const VENUE_INFO: Record<string, { description: string; address: string; capacity: string; genres: string[]; vibe: string }> = {
-  'Control Club': { description: 'Underground electronic music club in the heart of Bucharest. Known for quality bookings and intimate atmosphere.', address: 'Str. Constantin Mille 4, Bucharest', capacity: '400', genres: ['Techno', 'House', 'Electronic'], vibe: 'Dark, raw, industrial warehouse feel with exposed brick and minimal lighting' },
-  'Nook Club': { description: 'Boutique club experience with curated lineups and premium sound.', address: 'Str. Bd. Nicolae Balcescu 2, Bucharest', capacity: '300', genres: ['House', 'Disco', 'Electronic'], vibe: 'Sleek and intimate with warm amber tones and velvet accents' },
-  'Club Guesthouse': { description: 'Multi-room venue hosting diverse events from electronic to live music.', address: 'Str. Batistei 14, Bucharest', capacity: '500', genres: ['Electronic', 'Live', 'Alternative'], vibe: 'Eclectic multi-room space, each room a different world' },
-  'Expirat Halele Carol': { description: 'Legendary underground venue in Halele Carol complex. Raw industrial aesthetic.', address: 'Halele Carol, Piata Libertatii, Bucharest', capacity: '600', genres: ['Techno', 'Underground', 'Experimental'], vibe: 'Cavernous concrete halls with industrial pipes and strobes' },
-  'OXYA Club': { description: 'Premium nightlife destination with world-class sound and production.', address: 'Bucharest', capacity: '800', genres: ['Electronic', 'Techno', 'House'], vibe: 'Futuristic LED-wrapped walls, massive sound system' },
+const VENUE_INFO: Record<string, { description: string; address: string; capacity: string; genres: string[] }> = {
+  'Control Club': { description: 'Underground electronic music club in the heart of Bucharest. Known for quality bookings and intimate atmosphere.', address: 'Str. Constantin Mille 4, Bucharest', capacity: '400', genres: ['Techno', 'House', 'Electronic'] },
+  'Nook Club': { description: 'Boutique club experience with curated lineups and premium sound.', address: 'Str. Bd. Nicolae Balcescu 2, Bucharest', capacity: '300', genres: ['House', 'Disco', 'Electronic'] },
+  'Club Guesthouse': { description: 'Multi-room venue hosting diverse events from electronic to live music.', address: 'Str. Batistei 14, Bucharest', capacity: '500', genres: ['Electronic', 'Live', 'Alternative'] },
+  'Expirat Halele Carol': { description: 'Legendary underground venue in Halele Carol complex. Raw industrial aesthetic.', address: 'Halele Carol, Piata Libertatii, Bucharest', capacity: '600', genres: ['Techno', 'Underground', 'Experimental'] },
+  'OXYA Club': { description: 'Premium nightlife destination with world-class sound and production.', address: 'Bucharest', capacity: '800', genres: ['Electronic', 'Techno', 'House'] },
 };
 
 function getVenueInfo(name: string) {
-  return VENUE_INFO[name] || { description: 'A popular nightlife venue in Bucharest.', address: 'Bucharest, Romania', capacity: 'N/A', genres: ['Various'], vibe: 'Vibrant nightlife atmosphere' };
+  return VENUE_INFO[name] || { description: 'A popular nightlife venue in Bucharest.', address: 'Bucharest, Romania', capacity: 'N/A', genres: ['Various'] };
 }
 
 const GALLERY_THEMES = [
@@ -68,7 +68,7 @@ export default function VenuePage({ venueName, onBack, onClose }: VenuePageProps
               )}
             </div>
             <p className="text-xs text-noctvm-silver mt-0.5">{info.address}</p>
-            <p className="text-xs text-noctvm-silver/70 mt-1 leading-relaxed">{info.description} <span className="italic text-noctvm-silver/50">{info.vibe}.</span></p>
+            <p className="text-xs text-noctvm-silver/70 mt-1 leading-relaxed">{info.description}</p>
             <div className="flex flex-wrap gap-1.5 mt-2">
               {info.genres.map(g => (
                 <span key={g} className="px-2 py-0.5 rounded-full text-[9px] uppercase tracking-wider font-medium bg-noctvm-midnight text-noctvm-violet border border-noctvm-violet/20">{g}</span>
